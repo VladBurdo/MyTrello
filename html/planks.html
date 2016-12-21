@@ -1,0 +1,15 @@
+    <div class="active">
+      <h3>Персональные доски</h3>
+      <ul>
+        <li ng-repeat="plank in list.plankList" ng-click="list.openPlank($index)">
+          <h3>{{plank.plankName}}</h3>
+        </li>
+        <li class="addPlank">
+          <form ng-submit="list.addPlank()">
+            <input type="text" ng-model="list.plankText"
+                 class="plankText" placeholder="Название...">
+            <input class="submitPlank" type="submit" value="Создать">
+          </form>
+        </li>
+      </ul>
+    </div>

@@ -1,0 +1,26 @@
+  <div class="cards">
+    <h3>Карточки доски Х</h3>
+    <ul class="b_card_ul">
+      <li class="b_card_li" ng-repeat="card in list.dataCards">
+        <h3>{{card.nameList}}</h3>
+        <ul class="m_card_ul">
+          <li class="m_card_li"ng-repeat="card in card.card">{{card.content}}</li>
+
+            <form ng-submit="list.addCard_m($index)">
+              <input type="text" ng-model="list.m_cardsText"
+                   class="cardText" placeholder="Название...">
+            </form>
+
+
+        </ul>
+      </li>
+      <li class="addPlank">
+        <form ng-submit="list.addCardList()">
+          <input type="text" ng-model="list.cardsText"
+               class="plankText" placeholder="Название...">
+          <input class="submitPlank" type="submit" value="Создать">
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>

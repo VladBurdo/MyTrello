@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="appTrello">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+  <title>MyTrello</title>
+</head>
+<body ng-controller="ListPlankCtrl as list">
+  <header>
+    <div class="header">
+      <a ui-sref="planks" class="logo"></a>
+      <input class="login" type="submit" value="{{list.infoUser.name}}" ui-sref="login">
+    </div>
+  </header>
+  <div class="view" ui-view>
+    <div class="container" >
+      <div class="jumbotron">
+        <h2>Авторизация!</h2>
+      </div>
+      <form class="form-signin" role="form">
+        <input ng-model="list.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+        <input ng-model="list.password" type="password" class="form-control" placeholder="Password" required="">
+        <label class="checkbox">
+          <a href="#">Забыли пароль?</>
+          </label>
+          <button ng-click="list.SignIn()" class="btnlogon" type="submit">Вход</button>
+        </form>
+      </div>
+  </div>
+    <script src="./js/appTrello.module.js"></script>
+    <script src="./js/controller/listPlank.module.js"></script>
+    <script src="./js/controller/listPlank.controller.js"></script>
+    <script src="./js/service/dataPlank.module.js"></script>
+    <script src="./js/service/dataPlank.service.js"></script>
+    <script src="./js/router/router.module.js"></script>
+    <script src="./js/router/router.config.js"></script>
+    <script src="./js/service/dataCards.module.js"></script>
+    <script src="./js/service/dataCards.service.js"></script>
+  </body>
+</html>
